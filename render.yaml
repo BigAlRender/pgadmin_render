@@ -1,8 +1,12 @@
 services:
-  - type: web
+  - type: pserv
     name: pgAdmin
     runtime: docker
-    plan: free
+    plan: starter
+    disk:
+      name: data
+      mountPath: /var/lib/pgadmin
+      sizeGB: 1
     envVars:
       - key: PGADMIN_LISTEN_ADDRESS
         value: 0.0.0.0
